@@ -10,7 +10,7 @@ module.exports = ((app)=>{
         .get(resJson.index);
 
     // route for get all country
-    app.route('/api/v1/all-country')
+    app.route('/api/v1/country')
         .get(resJson.allCountry);
 
     // route for get country for code (serach using code /ID/US/SA)

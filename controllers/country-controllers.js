@@ -8,7 +8,7 @@ exports.index = ((req, res)=>{
     response.succsess("Belajar membuat rest api", res);
 });
 
-// get all country
+// get country code and name
 exports.allCountry = ((req, res)=>{
     connection.query('SELECT (code) as id, (name) as value FROM country WHERE delete_flag = 0 AND inactive_flag = 0', (error, rows, fields)=>{
         if (error) {
