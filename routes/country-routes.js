@@ -13,5 +13,10 @@ module.exports = ((app)=>{
 
     app.route('/api/v1/get-country-code/:code')
         .get(resJson.getCountryCode);
+
+    app.route('/api/v1/create-country')
+        .post(resJson.createCountry);
+
+    
 });
 
