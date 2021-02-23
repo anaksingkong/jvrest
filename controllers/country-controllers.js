@@ -1,7 +1,7 @@
 'use strict';
 
-const connection = require('../models/connection')
-const response = require('../resp/res')
+const connection = require('../models/connection');
+const response = require('../resp/res');
 
 // tes routes untuk page home
 exports.index = ((req, res)=>{

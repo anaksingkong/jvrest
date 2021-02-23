@@ -9,6 +9,7 @@ module.exports = ((app)=>{
     app.route('/')
         .get(resJson.index);
 
+    // route for get all country
     app.route('/api/v1/country')
         .get(resJson.allCountry);
 
