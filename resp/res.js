@@ -6,8 +6,8 @@ exports.succsess = ((values, res)=>{
         "status": 200,
         "error": null
         "data": values
-    }
+    };
 
     res.json(data);
     res.end();
-})
+});
