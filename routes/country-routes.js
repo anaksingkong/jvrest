@@ -17,6 +17,8 @@ module.exports = ((app)=>{
     app.route('/api/v1/create-country')
         .post(resJson.createCountry);
 
+    app.route('/api/v1/edit-country')
+        .put(resJson.updateCountry);
     
 });
 

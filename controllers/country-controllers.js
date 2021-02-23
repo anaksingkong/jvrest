@@ -31,6 +31,8 @@ exports.getCountryCode = ((req, res)=>{
         }
     });
 });
+
+// create new country 
 exports.createCountry = ((req, res)=>{
     const code = req.body.code;
     const name = req.body.name;
@@ -51,5 +53,24 @@ exports.createCountry = ((req, res)=>{
     });
 });
 
-// create new country 
+// change data
+exports.updateCountry = ((req, res)=>{
+    const id = req.body.id_country;
+    const code = req.body.code;
+    const name = req.body.name;
+    const description = req.body.description;
+    const delete_flag = req.body.delete_flag;
+    const inactive_flag = req.body.inactive_flag;
+    const created_by = req.body.created_by;
+    const date_created = req.body.date_created;
+    const updated_by = req.body.updated_by;
+    const last_updated = req.body.last_updated;
 
+    connection.query('UPDATE country SET code=?, name=?, description=?, delete_flag=?, inactive_flag=?, created_by=?, date_created=?, updated_by=?, last_updated=? WHERE id_country=? ', [code, name, description, delete_flag, inactive_flag, created_by, date_created, updated_by, last_updated, id], (error, rows, fields)=>{
+        if (error) {
+            console.log(error)
+        } else {
+            response.succsess("Data berhasil dirubah", res);
+        }
+    });
+});
