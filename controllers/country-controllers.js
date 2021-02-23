@@ -8,8 +8,18 @@ exports.index = ((req, res)=>{
     response.succsess("Belajar membuat rest api", res);
 });
 
-// get country code and name
 exports.allCountry = ((req, res)=>{
+    connection.query('SELECT * FROM country', (error, rows, fields)=>{
+        if (error) {
+            console.log(error)
+        } else {
+            response.succsess(rows, res);
+        }
+    });
+});
+
+// get country code and name
+exports.getCountryFlag = ((req, res)=>{
     connection.query('SELECT (code) as id, (name) as value FROM country WHERE delete_flag = 0 AND inactive_flag = 0', (error, rows, fields)=>{
         if (error) {
             console.log(error);

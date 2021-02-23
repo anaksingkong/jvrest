@@ -9,9 +9,12 @@ module.exports = ((app)=>{
     app.route('/')
         .get(resJson.index);
 
-    // route for get all country
     app.route('/api/v1/country')
         .get(resJson.allCountry);
+
+    // route for get country with delete-flag = false and inactive_flag=false
+    app.route('/api/v1/get-country-flag')
+        .get(resJson.getCountryFlag);
 
     // route for get country for code (serach using code /ID/US/SA)
     app.route('/api/v1/get-country-code/:code')
