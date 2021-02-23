@@ -53,7 +53,7 @@ exports.createCountry = ((req, res)=>{
     });
 });
 
-// change data
+// update data country
 exports.updateCountry = ((req, res)=>{
     const id = req.body.id_country;
     const code = req.body.code;
@@ -71,6 +71,19 @@ exports.updateCountry = ((req, res)=>{
             console.log(error)
         } else {
             response.succsess("Data berhasil dirubah", res);
+        }
+    });
+});
+
+// delete date country
+exports.deleteCountry = ((req, res)=>{
+    const id = req.params.id_country;
+
+    connection.query('DELETE FROM country WHERE id_country= ?', [id], (error, rows, fields)=>{
+        if (error) {
+            console.log(error);
+        } else { 
+            response.succsess("Data berhasil dihapus", res);
         }
     });
 });
