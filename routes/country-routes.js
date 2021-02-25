@@ -30,7 +30,7 @@ module.exports = ((app)=>{
         .put(resJson.updateCountry);
     
     // route for delete country
-    app.route('/api/v1/delete-country')
+    app.route('/api/v1/delete-country/:id')
         .delete(resJson.deleteCountry);
 });
 
